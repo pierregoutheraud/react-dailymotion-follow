@@ -19,7 +19,7 @@ function login(callback) {
     } else {
       console.error('login failed');
     }
-  }, { scope: 'read write' });
+  }, { scope: 'read write manage_subscriptions' });
 }
 
 React.render(React.createElement(DailymotionFollow, {

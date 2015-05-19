@@ -2,6 +2,7 @@
 
 $blue: #42aedc;
 $dm-blue: #006da1;
+$dark-blue: #3c9dc7;
 $black: #2f323a;
 $light-grey: #e2e3ea;
 
@@ -10,15 +11,19 @@ $light-grey: #e2e3ea;
   background-color: #f0f3f6;
   font-size: 14px;
   font-weight: 400;
-  padding: 0 15px;
+  // padding: 0 15px;
   border-radius: 3px;
-  height: 32px;
+  height: 34px;
   border: none;
   cursor: pointer;
   font-family: 'Source Sans Pro', sans-serif;
 
-  transition: 300ms ease all;
-  -webkit-transition: 300ms ease all;
+  // transition: 200ms ease all;
+  // -webkit-transition: 200ms ease all;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .dm-follow {
@@ -26,7 +31,7 @@ $light-grey: #e2e3ea;
   font-family: 'Source Sans Pro', sans-serif;
 
   *, *:before, *:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
@@ -40,13 +45,16 @@ $light-grey: #e2e3ea;
     // transition: none;
     // -webkit-transition: none;
 
+    // transition: 100ms ease all;
+    // -webkit-transition: 100ms ease all;
+
     background: $blue;
     color: #fff;
-    padding: 0 14px;
-
+    // padding: 0 15px;
+    width: 85px;
     &:hover:focus,
     &:hover {
-      background-color: $dm-blue;
+      background-color: $dark-blue;
       color: #fff;
     }
 
@@ -59,11 +67,16 @@ $light-grey: #e2e3ea;
       content: '';
       width: 10px;
       height: 12px;
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAUCAYAAADhj08IAAAB90lEQVRIx7WWPUsDQRCGE/xABEWRUxALEQtBixxiIfb2/gEbu4iFf8DOxo82lzSCiAiCoCII4dRgaSEJCBaCYCEqgohWgmR9F2bDMOyde/k4eCA3dzAP++7NJqWUSsVRmp3kZEEA0qKeopp+ll068VN1MAquwYS+t8mYS4ppqSpQIC/k0lRT9E5SuXHwBBR4A34SsYAaKyHHpWrPEkjpFXomKcN5EjGrgKVW0O86Sk2BVyGl4+xJIhYlFyc1BHbBoEXKB+9Cqgi6zR5zuhzkavuOGo+Ae2r4AMaY1Az4EFJnoMu8U69YYBELhFhRNH4B02AOfIpnR6CTr2g9UQYxUeZZlDrGWyHwBb5FbR+0y6gb3fyFiA/CyPWCkhDh7IA224fRyLgoOI4LvW+OLVI5EPn1RopZJnuSAbssGrXR6hiprTipKDHb3nI9knIWKYMW2QDrLjMuMkbWMANC4LGaR7WMqcU0mQch6Nf3/53NBhexS4qoTEIe/VYkFye2AH7Y8GyqmBapMDkjVTGriIZ9FqlF8EtSj2bAJhFzGaxcTkr5dN5tsg29AqokdQeGjXArxMpMrMzE+Cg4BGvs/gYM8JVsdpQ8Ph6rR0fJgWVOXel/CTLiZoqFIj4ea0irpiPcZlKn/EBulVjUuLiwjItVsAc6osaHq9gfof00gfIM2twAAAAASUVORK5CYII=);
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAUCAYAAADhj08IAAACDklEQVRIx7WWzytEURTH5zVIikiPkoVkoVjMSxays7D3D9jYjSz8A3Y2fmxnzEZJUoqQUtNgsrQQpSxIWQgpiZXSPN+rc6czZ+59896YmfrUzHmn9z5zz7nnvpjv+7Eg8mNDf8wceFHpA+dgUP2m+yRBGjj6vgyHriVVvklGf0riEaUGwCPwwSvwSKoAfLAm5ByK+ZSTrIeYWqEnktIc02r4DC3HpYrXai02DF6ElCpnq03AEMuo3Khi3WADdBmkPPAmpLKghfWYSa5MSvdYqA+Se8EtPfAO9DOpUfAupI5As86x9JOptLGoYlnx4GcwAsbBh7i2C5r4ihp2nxRLS7GwpVRlvBQCn+BLxLZAgyx1BamSVatmXLSBvBDhrIO4aWNYSpixbAinml2p+mbfIJUCjm3HGlYqU49xEafV0VIrQVIkFmXAzsYm9u4DCTiSlMgSWAwz40IeSSklZeqxstUKcVZOghzoQF4C5IDLHuhSLKHybWexjP9XbAp862GKvFMqxxUJufRdxXImMRuhxHDDdoPUNPghqQc1cEnkmslpKRVzo4pVGqwenX/LrMHnQIGkbkAP6yMuV5TSq67/bNBrVlgxPhp2wAL7fQE6RYPz8vGyRhYLLCUdLduGuXWm3hrEznNF+XhZ3Xr0mCrhKpM65Ac0E8uJ8vGy1r752a6cB5ug0TKrbOPiJOq4+AU7AFdRp4RXTAAAAABJRU5ErkJggg==);
+      // background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAUCAYAAADhj08IAAAB90lEQVRIx7WWPUsDQRCGE/xABEWRUxALEQtBixxiIfb2/gEbu4iFf8DOxo82lzSCiAiCoCII4dRgaSEJCBaCYCEqgohWgmR9F2bDMOyde/k4eCA3dzAP++7NJqWUSsVRmp3kZEEA0qKeopp+ll068VN1MAquwYS+t8mYS4ppqSpQIC/k0lRT9E5SuXHwBBR4A34SsYAaKyHHpWrPEkjpFXomKcN5EjGrgKVW0O86Sk2BVyGl4+xJIhYlFyc1BHbBoEXKB+9Cqgi6zR5zuhzkavuOGo+Ae2r4AMaY1Az4EFJnoMu8U69YYBELhFhRNH4B02AOfIpnR6CTr2g9UQYxUeZZlDrGWyHwBb5FbR+0y6gb3fyFiA/CyPWCkhDh7IA224fRyLgoOI4LvW+OLVI5EPn1RopZJnuSAbssGrXR6hiprTipKDHb3nI9knIWKYMW2QDrLjMuMkbWMANC4LGaR7WMqcU0mQch6Nf3/53NBhexS4qoTEIe/VYkFye2AH7Y8GyqmBapMDkjVTGriIZ9FqlF8EtSj2bAJhFzGaxcTkr5dN5tsg29AqokdQeGjXArxMpMrMzE+Cg4BGvs/gYM8JVsdpQ8Ph6rR0fJgWVOXel/CTLiZoqFIj4ea0irpiPcZlKn/EBulVjUuLiwjItVsAc6osaHq9gfof00gfIM2twAAAAASUVORK5CYII=); // white cross
+      // background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAUCAYAAADhj08IAAAB90lEQVRIx7WWzytEURTH3zRIikhDyUKyUCzmJQvZWdj7B2zsRhb+ATsbP7bzZjZKklKElNLDZGmhmVIWpCyElMRKaa7vrXN1nO578978WHxq3rmvzqf7ve/ccZRSThiFiRFOBnggIeoO1fRaZu7QdapgAFyCYf3sTO3fSxTxr05SZaBATsglqKbonbhyQ+ARKPAK3DhiHjVWQo5L/a3FkNI79ERShpM4YlYBSy2v340oNQpehJSOsz2OWJBcmFQv2AQ9FikXvAmpU9BmzpiKQsB5skVrGveDW2p4BwaZ1Dh4F1LHoNW8U62YZxHzhNipaPwMxsAk+BBre6CF72g1UXohUeZYlDrGayHwCb5EbRs0yahrPfz5gA/CyHWAghDhbICk7cOoZVzkI44LfW4OLFJZEPj1NmrAzotGSdodI7UWJhUkZjtbUa+krEXKoEVWwHKUGVdxt9AoDXyQYhIpqqVNLaTJNPBBl36udDcbooidU0RFEkrRb0VyYWIz4JsNz7qKaZESkzNSJbOLaNhpkZoFPyT1YAZsHLEog5XLSSmX7rtVdqAXQJmkbkCfEW6EWJGJFZkYHwW7YIk9X4FuvpP1jpLHx2NN0VWyY5lTF/pfgoy4nmK+iI/H6tOu6QjXmdQRv5AbJRY0Ls4s42IRbIHmoPERVewXMPOipnEoDYYAAAAASUVORK5CYII=);
       background-position: 0 0;
       margin: 0 6px 0 0;
       position: relative;
       top: 1px;
+
+      // transition: 100ms ease all;
+      // -webkit-transition: 100ms ease all;
     }
 
   }
@@ -71,7 +84,7 @@ $light-grey: #e2e3ea;
   &__count {
     height: 28px;
     line-height: 28px;
-    margin-left: 6px;
+    margin-left: 9px;
     font-size: 12px;
     padding: 0 9px;
     border: 1px solid $light-grey;
@@ -81,6 +94,8 @@ $light-grey: #e2e3ea;
     -webkit-border-radius: 3px;
     position: relative;
     vertical-align: middle;
+    position: relative;
+    top: -1px;
 
     display: none;
 
@@ -115,7 +130,7 @@ $light-grey: #e2e3ea;
 
   &--min {
 
-    .follow__btn {
+    .dm-follow__btn {
       height: 21px;
       padding: 0 8px;
       font-size: 11px;
@@ -130,19 +145,21 @@ $light-grey: #e2e3ea;
 
   }
 
-  &--following {
+  &--unfollow {
 
     &.active {
-      .follow__btn {
+      .dm-follow__btn {
         &:before {
           width: 12px;
           height: 12px;
-          background-position: -10px 0;
+          background-position: -26px 0;
         }
       }
     }
 
-    .follow__btn {
+    .dm-follow__btn {
+
+      width: 110px;
 
       // background-color: $very-light-grey;
       // border: 1px solid $grey;
@@ -160,7 +177,7 @@ $light-grey: #e2e3ea;
       &:before {
         width: 16px;
         height: 12px;
-        background-position: -22px 0;
+        background-position: -10px 0;
       }
 
     }
@@ -168,7 +185,7 @@ $light-grey: #e2e3ea;
     &.follow--min {
 
       &.active {
-        .follow__btn {
+        .dm-follow__btn {
           &:before {
             width: 8px;
             height: 8px;
@@ -177,7 +194,7 @@ $light-grey: #e2e3ea;
         }
       }
 
-      .follow__btn {
+      .dm-follow__btn {
         &:before {
           width: 11px;
           height: 8px;
@@ -189,7 +206,7 @@ $light-grey: #e2e3ea;
 
 
     &.follow--transparent {
-      .follow__btn {
+      .dm-follow__btn {
         background: none;
         border: none;
         &:hover {
