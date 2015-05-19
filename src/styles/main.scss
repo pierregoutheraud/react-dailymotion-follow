@@ -1,0 +1,204 @@
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic");
+
+$blue: #42aedc;
+$dm-blue: #006da1;
+$black: #2f323a;
+$light-grey: #e2e3ea;
+
+.btn {
+  display: inline-block;
+  background-color: #f0f3f6;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 15px;
+  border-radius: 3px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  transition: 300ms ease all;
+  -webkit-transition: 300ms ease all;
+}
+
+.dm-follow {
+
+  font-family: 'Source Sans Pro', sans-serif;
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  &__btn {
+
+    // transition: none;
+    // -webkit-transition: none;
+
+    background: $blue;
+    color: #fff;
+    padding: 0 14px;
+
+    &:hover:focus,
+    &:hover {
+      background-color: $dm-blue;
+      color: #fff;
+    }
+
+    &:focus {
+      color: #fff;
+    }
+
+    &:before {
+      display: inline-block;
+      content: '';
+      width: 10px;
+      height: 12px;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAUCAYAAADhj08IAAAB90lEQVRIx7WWPUsDQRCGE/xABEWRUxALEQtBixxiIfb2/gEbu4iFf8DOxo82lzSCiAiCoCII4dRgaSEJCBaCYCEqgohWgmR9F2bDMOyde/k4eCA3dzAP++7NJqWUSsVRmp3kZEEA0qKeopp+ll068VN1MAquwYS+t8mYS4ppqSpQIC/k0lRT9E5SuXHwBBR4A34SsYAaKyHHpWrPEkjpFXomKcN5EjGrgKVW0O86Sk2BVyGl4+xJIhYlFyc1BHbBoEXKB+9Cqgi6zR5zuhzkavuOGo+Ae2r4AMaY1Az4EFJnoMu8U69YYBELhFhRNH4B02AOfIpnR6CTr2g9UQYxUeZZlDrGWyHwBb5FbR+0y6gb3fyFiA/CyPWCkhDh7IA224fRyLgoOI4LvW+OLVI5EPn1RopZJnuSAbssGrXR6hiprTipKDHb3nI9knIWKYMW2QDrLjMuMkbWMANC4LGaR7WMqcU0mQch6Nf3/53NBhexS4qoTEIe/VYkFye2AH7Y8GyqmBapMDkjVTGriIZ9FqlF8EtSj2bAJhFzGaxcTkr5dN5tsg29AqokdQeGjXArxMpMrMzE+Cg4BGvs/gYM8JVsdpQ8Ph6rR0fJgWVOXel/CTLiZoqFIj4ea0irpiPcZlKn/EBulVjUuLiwjItVsAc6osaHq9gfof00gfIM2twAAAAASUVORK5CYII=);
+      background-position: 0 0;
+      margin: 0 6px 0 0;
+      position: relative;
+      top: 1px;
+    }
+
+  }
+
+  &__count {
+    height: 28px;
+    line-height: 28px;
+    margin-left: 6px;
+    font-size: 12px;
+    padding: 0 9px;
+    border: 1px solid $light-grey;
+    background-color: #fff;
+    color: $black;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    position: relative;
+    vertical-align: middle;
+
+    display: none;
+
+    &.active {
+      display: inline-block;
+    }
+
+    &:after, &:before {
+      right: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &:after {
+      border-color: rgba(255, 255, 255, 0);
+      border-right-color: #fff;
+      border-width: 4px;
+      margin-top: -4px;
+    }
+    &:before {
+      border-color: rgba(210, 216, 219, 0);
+      border-right-color: #d2d8db;
+      border-width: 5px;
+      margin-top: -5px;
+    }
+  }
+
+  &--min {
+
+    .follow__btn {
+      height: 21px;
+      padding: 0 8px;
+      font-size: 11px;
+
+      &:before {
+        width: 8px;
+        height: 8px;
+        background-position: 0 -12px;
+        top: 0;
+      }
+    }
+
+  }
+
+  &--following {
+
+    &.active {
+      .follow__btn {
+        &:before {
+          width: 12px;
+          height: 12px;
+          background-position: -10px 0;
+        }
+      }
+    }
+
+    .follow__btn {
+
+      // background-color: $very-light-grey;
+      // border: 1px solid $grey;
+      // border: 1px solid #d2d8db;
+      border: 1px solid $light-grey;
+      background-color: white;
+      color: $black;
+
+      &:hover:focus,
+      &:hover {
+        background-color: white;
+        color: $black;
+      }
+
+      &:before {
+        width: 16px;
+        height: 12px;
+        background-position: -22px 0;
+      }
+
+    }
+
+    &.follow--min {
+
+      &.active {
+        .follow__btn {
+          &:before {
+            width: 8px;
+            height: 8px;
+            background-position: -8px -12px;
+          }
+        }
+      }
+
+      .follow__btn {
+        &:before {
+          width: 11px;
+          height: 8px;
+          background-position: -16px -12px;
+        }
+      }
+
+    }
+
+
+    &.follow--transparent {
+      .follow__btn {
+        background: none;
+        border: none;
+        &:hover {
+          background: none;
+          border: none;
+        }
+      }
+    }
+
+  }
+
+}
