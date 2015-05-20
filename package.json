@@ -1,6 +1,6 @@
 {
   "name": "react-dailymotion-follow",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "React component for Dailymotion follow button",
   "main": "dist/react-dailymotion-follow.js",
   "directories": {
