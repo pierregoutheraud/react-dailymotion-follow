@@ -31,15 +31,6 @@ let DailymotionFollow = React.createClass({
     }
   },
 
-  // componentWillReceiveProps() {
-  //   console.log('componentWillReceiveProps');
-  //   // this.setState({
-  //   //   isFollowing: null
-  //   // });
-  //   console.log( this.props );
-  //   this.onLogged();
-  // },
-
   call(method, url, data={}) {
     return new Promise((resolve, reject) => {
       DM.api( url, method, data, (res) => {
