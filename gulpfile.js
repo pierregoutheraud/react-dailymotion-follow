@@ -9,9 +9,9 @@ var fs = require('fs');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 
-// set variable via $ gulp --type production
-var environment = $.util.env.type || 'development';
-var isProduction = environment === 'production';
+// set variable via $ gulp --type prod
+var environment = $.util.env.type || 'dev';
+var isProduction = environment === 'prod';
 
 var port = $.util.env.port || 9666;
 var src = 'src/';
@@ -37,10 +37,11 @@ gulp.task('scripts', function() {
             .transform(babelify)
             // .pipe($.plumber())
             .bundle()
-            .pipe(source('react-dailymotion-follow.js'))
+            .pipe(source('react-dailymotion-follow.' + (isProduction ? 'min.' : '') + 'js' ))
             .pipe(buffer())
             .pipe($.sourcemaps.init())
             // .pipe($.uglifyjs())
+            .pipe(isProduction ? $.uglifyjs() : $.util.noop())
             .pipe($.sourcemaps.write())
             .pipe(gulp.dest(dist))
             .pipe($.connect.reload());
