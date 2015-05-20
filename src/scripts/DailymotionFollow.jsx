@@ -137,29 +137,32 @@ let DailymotionFollow = React.createClass({
     this.setState({ hover: false });
   },
 
+  onClick() {
+    if( !this.state.authenticated ) {
+      this.props.onLogin(this.onLogged);
+    } else {
+      this.state.isFollowing ? this.unfollow() : this.follow();
+    }
+  },
+
   render() {
 
-    // console.log('Render')
-    // console.log(this.props, this.state)
+    console.log(this.state)
 
     let text = 'Follow',
-        onclick = null,
         dmFollowClass = 'dm-follow ';
 
     switch( this.state.authenticated ) {
       case true:
         if( this.state.isFollowing ) {
           dmFollowClass += 'dm-follow--unfollow ';
-          onclick = this.unfollow;
           text = this.state.hover ? 'Unfollow ' : 'Following' ;
         } else {
           dmFollowClass += 'dm-follow--follow ';
-          onclick = this.follow;
         }
         break;
       case false:
         dmFollowClass += 'dm-follow--follow ';
-        onclick = this.props.onLogin.bind(null,this.onLogged);
         break;
     }
 
@@ -178,7 +181,7 @@ let DailymotionFollow = React.createClass({
       <div className={dmFollowClass}  >
         <button
           className="btn dm-follow__btn"
-          onClick={onclick}
+          onClick={this.onClick}
           onMouseEnter={this.onMouseEnter}
           onMouseOut={this.onMouseOut}
         >{text}</button>

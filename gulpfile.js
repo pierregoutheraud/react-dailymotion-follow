@@ -31,7 +31,7 @@ var autoprefixerBrowsers = [
 ];
 
 gulp.task('scripts', function() {
-  return browserify(src+'scripts/DailymotionFollow.jsx', { debug: true })
+  return browserify(__dirname + '/' + src + 'scripts/DailymotionFollow.jsx', { debug: true })
             .transform(babelify)
             .exclude('react')
             .bundle()
@@ -83,7 +83,7 @@ gulp.task('serve', function() {
     root: __dirname,
     port: port,
     livereload: {
-      port: 35720
+      port: 35721
     }
   });
 });
