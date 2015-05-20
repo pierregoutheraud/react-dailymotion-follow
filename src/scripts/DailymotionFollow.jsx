@@ -107,7 +107,10 @@ let DailymotionFollow = React.createClass({
             })
             .catch((res) => {
               console.error('Error while follow');
-              this.setState({ isFollowing: false });
+              this.setState({
+                isFollowing: false,
+                fans_total: this.state.fans_total + 1
+              });
               return res;
             });
   },
@@ -124,7 +127,10 @@ let DailymotionFollow = React.createClass({
             })
             .catch((res) => {
               console.error('Error while follow');
-              this.setState({ isFollowing: true });
+              this.setState({
+                isFollowing: true,
+                fans_total: this.state.fans_total + 1
+              });
               return res;
             });
   },
@@ -147,7 +153,7 @@ let DailymotionFollow = React.createClass({
 
   render() {
 
-    console.log(this.state)
+    // console.log(this.state)
 
     let text = 'Follow',
         dmFollowClass = 'dm-follow ';
