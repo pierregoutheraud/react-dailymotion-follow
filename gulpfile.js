@@ -4,7 +4,6 @@ var del = require('del');
 var $ = require('gulp-load-plugins')();
 var browserify = require('browserify');
 var babelify = require('babelify');
-var merge = require('merge-stream');
 var fs = require('fs');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
@@ -32,29 +31,19 @@ var autoprefixerBrowsers = [
 ];
 
 gulp.task('scripts', function() {
-
   return browserify(src+'scripts/DailymotionFollow.jsx', { debug: true })
             .transform(babelify)
-            // .pipe($.plumber())
+            .exclude('react')
             .bundle()
-            .pipe(source('react-dailymotion-follow.' + (isProduction ? 'min.' : '') + 'js' ))
+            .pipe(source('react-dailymotion-follow.js'))
             .pipe(buffer())
             .pipe($.sourcemaps.init())
-            // .pipe($.uglifyjs())
-            .pipe(isProduction ? $.uglifyjs() : $.util.noop())
             .pipe($.sourcemaps.write())
             .pipe(gulp.dest(dist))
+            .pipe($.rename('react-dailymotion-follow.min.js'))
+            .pipe($.uglifyjs())
+            .pipe(gulp.dest(dist))
             .pipe($.connect.reload());
-
-  // return gulp.src(src + '**/*.jsx')
-  //   .pipe($.sourcemaps.init())
-  //   .pipe($.concat("react-dailymotion-follow.js"))
-  //   .pipe($.babel())
-  //   .pipe($.sourcemaps.write())
-  //   // .pipe(isProduction ? $.uglifyjs() : $.util.noop())
-  //   .pipe($.size({ title : 'scripts' }))
-  //   .pipe(gulp.dest(dist))
-  //   .pipe($.connect.reload());
 });
 
 gulp.task('example', function(){
