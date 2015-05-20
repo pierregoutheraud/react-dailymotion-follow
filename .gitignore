@@ -1,5 +1,6 @@
 node_modules
 dist
+example/example.js
 bower_components
 *.log
 *.swp

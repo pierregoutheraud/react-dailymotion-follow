@@ -14,6 +14,7 @@ let DailymotionFollow = React.createClass({
   },
 
   componentDidMount() {
+    // TODO : Import Dailymotion JS SDK if no DM
     if( typeof DM === 'undefined' ) console.error('Error: You must import Dailymotion javascript SDK.');
 
     this.isLogged().then((isLogged) => {
@@ -23,6 +24,21 @@ let DailymotionFollow = React.createClass({
       });
     });
   },
+
+  componentDidUpdate(prevProps, prevState) {
+    if( prevProps.xid !== this.props.xid ) {
+      this.onLogged();
+    }
+  },
+
+  // componentWillReceiveProps() {
+  //   console.log('componentWillReceiveProps');
+  //   // this.setState({
+  //   //   isFollowing: null
+  //   // });
+  //   console.log( this.props );
+  //   this.onLogged();
+  // },
 
   call(method, url, data={}) {
     return new Promise((resolve, reject) => {
@@ -48,18 +64,6 @@ let DailymotionFollow = React.createClass({
     });
   },
 
-  isFollowing() {
-    let url = '/me/following/' + this.props.xid;
-    return this.call('get', url)
-      .then((res) => {
-        if( res.list.length ) {
-          return true;
-        } else {
-          return false;
-        }
-      });
-  },
-
   onLogged() {
 
     this.fetchCount();
@@ -74,14 +78,26 @@ let DailymotionFollow = React.createClass({
 
   },
 
+  isFollowing() {
+    let url = '/me/following/' + this.props.xid;
+    return this.call('get', url)
+      .then((res) => {
+        if( res.list.length ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+  },
+
   fetchCount() {
-    let url = '/user/me';
+    let url = '/user/' + this.props.xid;
     let data = {
       fields: ['fans_total']
     };
     return this.call('get', url, data)
         .then((res) => {
-          let fans_total = formatNumber(res.fans_total,2);
+          let fans_total = res.fans_total;
           this.setState({ fans_total: fans_total });
           return fans_total;
         });
@@ -132,7 +148,8 @@ let DailymotionFollow = React.createClass({
 
   render() {
 
-    // console.log(this.state)
+    console.log('Render')
+    console.log(this.props, this.state)
 
     let text = 'Follow',
         onclick = null,
@@ -174,7 +191,7 @@ let DailymotionFollow = React.createClass({
           onMouseEnter={this.onMouseEnter}
           onMouseOut={this.onMouseOut}
         >{text}</button>
-        <p className={"dm-follow__count " + countActive} >{this.state.fans_total}</p>
+        <p className={"dm-follow__count " + countActive} >{formatNumber(this.state.fans_total,2)}</p>
       </div>
     );
 

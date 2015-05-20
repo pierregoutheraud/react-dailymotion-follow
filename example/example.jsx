@@ -23,9 +23,23 @@ function login(callback) {
 
 }
 
-React.render(
-  <DailymotionFollow
-    xid="x1aopll"
-    onLogin={login}
-  />
-, document.body);
+let renderComponent = function() {
+  console.log('renderComponent with xid: ' + xid);
+  React.render(
+    <DailymotionFollow
+      xid={xid}
+      onLogin={login}
+    />
+  , placeholder);
+}
+
+let input = document.querySelector('#input-xid'),
+    xid = input.value,
+    placeholder = document.querySelector('#button-placeholder');
+
+input.addEventListener('change', function(){
+  xid = input.value;
+  renderComponent();
+});
+
+renderComponent();
