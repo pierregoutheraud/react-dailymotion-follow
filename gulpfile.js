@@ -114,5 +114,5 @@ gulp.task('default', ['build', 'serve', 'watch']);
 
 // waits until clean is finished then builds the project
 gulp.task('build', ['clean'], function(){
-  gulp.start(['images','html', 'scripts','example', 'styles']);
+  gulp.start(['html', 'scripts','example', 'styles']);
 });
