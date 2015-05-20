@@ -148,8 +148,8 @@ let DailymotionFollow = React.createClass({
 
   render() {
 
-    console.log('Render')
-    console.log(this.props, this.state)
+    // console.log('Render')
+    // console.log(this.props, this.state)
 
     let text = 'Follow',
         onclick = null,

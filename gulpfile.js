@@ -37,7 +37,9 @@ gulp.task('scripts', function() {
             .bundle()
             .pipe(source('react-dailymotion-follow.js'))
             .pipe(buffer())
-            .pipe($.sourcemaps.init())
+            .pipe($.sourcemaps.init({
+                loadMaps: true
+            }))
             .pipe($.sourcemaps.write())
             .pipe(gulp.dest(dist))
             .pipe($.rename('react-dailymotion-follow.min.js'))
