@@ -4,6 +4,12 @@ let formatNumber = function(number, decPlaces) {var abbrev, i, size; if (decPlac
 
 let DailymotionFollow = React.createClass({
 
+  getDefaultProps() {
+    return {
+      count: true
+    };
+  },
+
   getInitialState(){
     return {
       authenticated: null,
@@ -57,7 +63,7 @@ let DailymotionFollow = React.createClass({
 
   onLogged() {
 
-    this.fetchCount();
+    if( this.props.count ) this.fetchCount();
     this.isFollowing().then( (isFollowing) => {
 
       this.setState({
@@ -153,8 +159,6 @@ let DailymotionFollow = React.createClass({
 
   render() {
 
-    // console.log(this.state)
-
     let text = 'Follow',
         dmFollowClass = 'dm-follow ';
 
@@ -180,7 +184,7 @@ let DailymotionFollow = React.createClass({
       dmFollowClass += 'active ';
 
     let countActive;
-    if( this.state.fans_total !== null && this.state.fans_total !== 0 )
+    if( this.state.fans_total !== null && this.state.fans_total !== 0 && this.props.count )
       countActive = 'active';
 
     return (

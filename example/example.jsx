@@ -29,6 +29,7 @@ let renderComponent = function() {
     <DailymotionFollow
       xid={xid}
       onLogin={login}
+      count={false}
     />
   , placeholder);
 }
