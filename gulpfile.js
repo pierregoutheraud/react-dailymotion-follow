@@ -73,7 +73,9 @@ gulp.task('styles', function () {
     .pipe($.autoprefixer({browsers: autoprefixerBrowsers}))
     .pipe($.sourcemaps.write())
     .pipe($.concat('react-dailymotion-follow.css'))
+    .pipe($.minifyCss())
     .pipe(gulp.dest(dist))
+    .pipe($.size({ title : 'css' }))
     .pipe($.connect.reload());
 });
 
