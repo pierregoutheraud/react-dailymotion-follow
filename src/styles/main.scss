@@ -13,7 +13,7 @@ $light-grey: #e2e3ea;
   font-weight: 400;
   // padding: 0 15px;
   border-radius: 3px;
-  height: 34px;
+  height: 30px;
   border: none;
   cursor: pointer;
   font-family: 'Source Sans Pro', sans-serif;
@@ -51,7 +51,7 @@ $light-grey: #e2e3ea;
     background: $blue;
     color: #fff;
     // padding: 0 15px;
-    width: 85px;
+    width: 80px;
     &:hover:focus,
     &:hover {
       background-color: $dark-blue;
@@ -68,8 +68,6 @@ $light-grey: #e2e3ea;
       width: 10px;
       height: 12px;
       background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAUCAYAAADhj08IAAACDklEQVRIx7WWzytEURTH5zVIikiPkoVkoVjMSxays7D3D9jYjSz8A3Y2fmxnzEZJUoqQUtNgsrQQpSxIWQgpiZXSPN+rc6czZ+59896YmfrUzHmn9z5zz7nnvpjv+7Eg8mNDf8wceFHpA+dgUP2m+yRBGjj6vgyHriVVvklGf0riEaUGwCPwwSvwSKoAfLAm5ByK+ZSTrIeYWqEnktIc02r4DC3HpYrXai02DF6ElCpnq03AEMuo3Khi3WADdBmkPPAmpLKghfWYSa5MSvdYqA+Se8EtPfAO9DOpUfAupI5As86x9JOptLGoYlnx4GcwAsbBh7i2C5r4ihp2nxRLS7GwpVRlvBQCn+BLxLZAgyx1BamSVatmXLSBvBDhrIO4aWNYSpixbAinml2p+mbfIJUCjm3HGlYqU49xEafV0VIrQVIkFmXAzsYm9u4DCTiSlMgSWAwz40IeSSklZeqxstUKcVZOghzoQF4C5IDLHuhSLKHybWexjP9XbAp862GKvFMqxxUJufRdxXImMRuhxHDDdoPUNPghqQc1cEnkmslpKRVzo4pVGqwenX/LrMHnQIGkbkAP6yMuV5TSq67/bNBrVlgxPhp2wAL7fQE6RYPz8vGyRhYLLCUdLduGuXWm3hrEznNF+XhZ3Xr0mCrhKpM65Ac0E8uJ8vGy1r752a6cB5ug0TKrbOPiJOq4+AU7AFdRp4RXTAAAAABJRU5ErkJggg==);
-      // background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAUCAYAAADhj08IAAAB90lEQVRIx7WWPUsDQRCGE/xABEWRUxALEQtBixxiIfb2/gEbu4iFf8DOxo82lzSCiAiCoCII4dRgaSEJCBaCYCEqgohWgmR9F2bDMOyde/k4eCA3dzAP++7NJqWUSsVRmp3kZEEA0qKeopp+ll068VN1MAquwYS+t8mYS4ppqSpQIC/k0lRT9E5SuXHwBBR4A34SsYAaKyHHpWrPEkjpFXomKcN5EjGrgKVW0O86Sk2BVyGl4+xJIhYlFyc1BHbBoEXKB+9Cqgi6zR5zuhzkavuOGo+Ae2r4AMaY1Az4EFJnoMu8U69YYBELhFhRNH4B02AOfIpnR6CTr2g9UQYxUeZZlDrGWyHwBb5FbR+0y6gb3fyFiA/CyPWCkhDh7IA224fRyLgoOI4LvW+OLVI5EPn1RopZJnuSAbssGrXR6hiprTipKDHb3nI9knIWKYMW2QDrLjMuMkbWMANC4LGaR7WMqcU0mQch6Nf3/53NBhexS4qoTEIe/VYkFye2AH7Y8GyqmBapMDkjVTGriIZ9FqlF8EtSj2bAJhFzGaxcTkr5dN5tsg29AqokdQeGjXArxMpMrMzE+Cg4BGvs/gYM8JVsdpQ8Ph6rR0fJgWVOXel/CTLiZoqFIj4ea0irpiPcZlKn/EBulVjUuLiwjItVsAc6osaHq9gfof00gfIM2twAAAAASUVORK5CYII=); // white cross
-      // background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAUCAYAAADhj08IAAAB90lEQVRIx7WWzytEURTH3zRIikhDyUKyUCzmJQvZWdj7B2zsRhb+ATsbP7bzZjZKklKElNLDZGmhmVIWpCyElMRKaa7vrXN1nO578978WHxq3rmvzqf7ve/ccZRSThiFiRFOBnggIeoO1fRaZu7QdapgAFyCYf3sTO3fSxTxr05SZaBATsglqKbonbhyQ+ARKPAK3DhiHjVWQo5L/a3FkNI79ERShpM4YlYBSy2v340oNQpehJSOsz2OWJBcmFQv2AQ9FikXvAmpU9BmzpiKQsB5skVrGveDW2p4BwaZ1Dh4F1LHoNW8U62YZxHzhNipaPwMxsAk+BBre6CF72g1UXohUeZYlDrGayHwCb5EbRs0yahrPfz5gA/CyHWAghDhbICk7cOoZVzkI44LfW4OLFJZEPj1NmrAzotGSdodI7UWJhUkZjtbUa+krEXKoEVWwHKUGVdxt9AoDXyQYhIpqqVNLaTJNPBBl36udDcbooidU0RFEkrRb0VyYWIz4JsNz7qKaZESkzNSJbOLaNhpkZoFPyT1YAZsHLEog5XLSSmX7rtVdqAXQJmkbkCfEW6EWJGJFZkYHwW7YIk9X4FuvpP1jpLHx2NN0VWyY5lTF/pfgoy4nmK+iI/H6tOu6QjXmdQRv5AbJRY0Ls4s42IRbIHmoPERVewXMPOipnEoDYYAAAAASUVORK5CYII=);
       background-position: 0 0;
       margin: 0 6px 0 0;
       position: relative;
