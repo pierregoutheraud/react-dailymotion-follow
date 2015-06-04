@@ -6,26 +6,6 @@ $dark-blue: #3c9dc7;
 $black: #2f323a;
 $light-grey: #e2e3ea;
 
-.btn {
-  display: inline-block;
-  background-color: #f0f3f6;
-  font-size: 14px;
-  font-weight: 400;
-  // padding: 0 15px;
-  border-radius: 3px;
-  height: 30px;
-  border: none;
-  cursor: pointer;
-  font-family: 'Source Sans Pro', sans-serif;
-
-  // transition: 200ms ease all;
-  // -webkit-transition: 200ms ease all;
-
-  &:focus {
-    outline: none;
-  }
-}
-
 .dm-follow {
 
   font-family: 'Source Sans Pro', sans-serif;
@@ -38,6 +18,26 @@ $light-grey: #e2e3ea;
 
   &.hidden {
     display: none;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: #f0f3f6;
+    font-size: 14px;
+    font-weight: 400;
+    // padding: 0 15px;
+    border-radius: 3px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    // transition: 200ms ease all;
+    // -webkit-transition: 200ms ease all;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__btn.btn {
@@ -55,9 +55,9 @@ $light-grey: #e2e3ea;
       color: #fff;
     }
 
-    &:focus {
-      color: #fff;
-    }
+    // &:focus {
+    //   color: #fff;
+    // }
 
     &:before {
       display: inline-block;
@@ -140,7 +140,7 @@ $light-grey: #e2e3ea;
 
   }
 
-  &--unfollow {
+  &--following {
 
     &.active {
       .dm-follow__btn {
@@ -155,10 +155,6 @@ $light-grey: #e2e3ea;
     .dm-follow__btn {
 
       width: 110px;
-
-      // background-color: $very-light-grey;
-      // border: 1px solid $grey;
-      // border: 1px solid #d2d8db;
       border: 1px solid $light-grey;
       background-color: white;
       color: $black;
@@ -177,8 +173,8 @@ $light-grey: #e2e3ea;
 
     }
 
+    /*
     &.follow--min {
-
       &.active {
         .dm-follow__btn {
           &:before {
@@ -188,7 +184,6 @@ $light-grey: #e2e3ea;
           }
         }
       }
-
       .dm-follow__btn {
         &:before {
           width: 11px;
@@ -196,10 +191,10 @@ $light-grey: #e2e3ea;
           background-position: -16px -12px;
         }
       }
-
     }
+    */
 
-
+    /*
     &.follow--transparent {
       .dm-follow__btn {
         background: none;
@@ -210,6 +205,7 @@ $light-grey: #e2e3ea;
         }
       }
     }
+    */
 
   }
 

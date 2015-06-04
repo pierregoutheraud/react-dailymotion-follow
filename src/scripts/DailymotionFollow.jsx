@@ -165,7 +165,7 @@ let DailymotionFollow = React.createClass({
     switch( this.state.authenticated ) {
       case true:
         if( this.state.isFollowing ) {
-          dmFollowClass += 'dm-follow--unfollow ';
+          dmFollowClass += 'dm-follow--following ';
           text = this.state.hover ? 'Unfollow ' : 'Following' ;
         } else {
           dmFollowClass += 'dm-follow--follow ';
@@ -188,7 +188,7 @@ let DailymotionFollow = React.createClass({
       countActive = 'active';
 
     return (
-      <div className={dmFollowClass}  >
+      <div className={"dmf "+ dmFollowClass}  >
         <button
           className="btn dm-follow__btn"
           onClick={this.onClick}
