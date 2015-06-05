@@ -188,9 +188,9 @@ let DailymotionFollow = React.createClass({
       countActive = 'active';
 
     return (
-      <div className={"dmf "+ dmFollowClass}  >
+      <div className={dmFollowClass}  >
         <button
-          className="btn dm-follow__btn"
+          className="dm-follow__btn"
           onClick={this.onClick}
           onMouseEnter={this.onMouseEnter}
           onMouseOut={this.onMouseOut}
