@@ -15,6 +15,7 @@ var isProduction = environment === 'prod';
 var port = $.util.env.port || 9666;
 var src = 'src/';
 var dist = 'dist/';
+var build = 'build/';
 var example = 'example/';
 
 // https://github.com/ai/autoprefixer
@@ -31,7 +32,8 @@ var autoprefixerBrowsers = [
 ];
 
 gulp.task('scripts', function() {
-  return browserify(__dirname + '/' + src + 'scripts/DailymotionFollow.jsx', { debug: true })
+
+  browserify(__dirname + '/' + src + 'scripts/DailymotionFollow.jsx', { debug: true })
             .transform(babelify)
             .exclude('react')
             .bundle()
@@ -46,6 +48,20 @@ gulp.task('scripts', function() {
             .pipe($.uglifyjs())
             .pipe(gulp.dest(dist))
             .pipe($.connect.reload());
+
+  gulp.src(__dirname + '/' + src + 'scripts/DailymotionFollow.jsx')
+    .pipe($.sourcemaps.init({
+        loadMaps: true
+    }))
+    .pipe($.babel())
+    .pipe($.concat('react-dailymotion-follow.js'))
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest(build))
+    // .pipe($.rename('react-dailymotion-follow.min.js'))
+    // .pipe($.uglifyjs())
+    // .pipe(gulp.dest(dist))
+    .pipe($.connect.reload());
+
 });
 
 gulp.task('example', function(){
