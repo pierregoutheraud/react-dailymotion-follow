@@ -51,12 +51,12 @@ gulp.task('scripts', function() {
             .pipe($.connect.reload());
 
   gulp.src(__dirname + '/' + src + 'scripts/DailymotionFollow.jsx')
-    .pipe($.sourcemaps.init({
-        loadMaps: true
-    }))
+    // .pipe($.sourcemaps.init({
+    //     loadMaps: true
+    // }))
     .pipe($.babel())
-    .pipe($.concat('react-dailymotion-follow.js'))
-    .pipe($.sourcemaps.write())
+    // .pipe($.concat('react-dailymotion-follow.js'))
+    // .pipe($.sourcemaps.write())
     .pipe(gulp.dest(build))
     // .pipe($.rename('react-dailymotion-follow.min.js'))
     // .pipe($.uglifyjs())

@@ -2,8 +2,8 @@
   "name": "react-dailymotion-follow",
   "version": "0.1.0",
   "description": "React component for Dailymotion follow button",
-  "main": "build/react-dailymotion-follow.js",
-  "browser": "build/react-dailymotion-follow.js",
+  "main": "build/DailymotionFollow.js",
+  "browser": "build/DailymotionFollow.js",
   "directories": {
     "example": "example"
   },
