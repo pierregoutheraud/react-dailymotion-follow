@@ -7,6 +7,7 @@ var babelify = require('babelify');
 var fs = require('fs');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var gutil = require('gulp-util');
 
 // set variable via $ gulp --type prod
 var environment = $.util.env.type || 'dev';
@@ -82,14 +83,14 @@ gulp.task('styles', function () {
   gulp.src([
       src + 'styles/main.scss',
     ])
-    .pipe($.sourcemaps.init())
-    .pipe($.sass({
-      style: 'compressed'
-    }))
+    // .pipe($.sourcemaps.init())
+    .pipe(isProduction ? gutil.noop() : $.sourcemaps.init())
+    .pipe($.sass())
     .pipe($.autoprefixer({browsers: autoprefixerBrowsers}))
-    .pipe($.sourcemaps.write())
+    // .pipe($.sourcemaps.write())
+    .pipe(isProduction ? gutil.noop() : $.sourcemaps.write())
     .pipe($.concat('react-dailymotion-follow.css'))
-    .pipe($.minifyCss())
+    // .pipe(isProduction ? $.minifyCss() : gutil.noop())
     .pipe(gulp.dest(dist))
     .pipe($.size({ title : 'css' }))
     .pipe($.connect.reload());
